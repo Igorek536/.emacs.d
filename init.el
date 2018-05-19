@@ -33,19 +33,19 @@
 
 (add-to-list 'load-path (concat user-emacs-directory "PowerEmacs"))
 
-(use-package core)
-(use-package core_ui)
-(use-package core_ui_modeline)
-(use-package core_editor)
-(use-package core_projects)
-(use-package core_completion)
-(use-package core_games)
+(require 'core)
+(require 'core_ui)
+(require 'core_ui_modeline)
+(require 'core_editor)
+(require 'core_projects)
+(require 'core_completion)
+(require 'core_games)
 
-(use-package lang)
-(use-package lang_cpp)
-(use-package lang_nasm)
+(require 'lang)
+(require 'lang_cpp)
+(require 'lang_nasm)
 
-(use-package keybindings)
+(require 'keybindings)
 
 ;;; init.el ends here
 (custom-set-variables
