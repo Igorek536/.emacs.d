@@ -8,8 +8,6 @@
 
 ;;; Code:
 
-(provide 'core_games) 
-
 (add-to-list 'load-path (concat user-emacs-directory "PowerEmacs/_pkg/emacsgames"))
 
 (use-package 5x5)
@@ -40,4 +38,5 @@
 (use-package autotetris-mode
   :ensure t)
 
+(provide 'core_games) 
 ;;; core_games.el ends here

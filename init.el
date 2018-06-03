@@ -19,12 +19,6 @@
 ;;                           |______|_| |_| |_|\__,_|\___|___/  ;;
 ;;                                                              ;;
 ;; For those, who code!                        ... by Igorek536 ;;
-;; Use it only in GUI mode!                                     ;;
-;;
-;; Now supported:
-;; - Python
-;; - Racket
-;; - NASM
 
 ;; Warning! You should install icons fonts!
 ;; Use: M-x -> all-the-icons-install-fonts
@@ -33,21 +27,18 @@
 
 (add-to-list 'load-path (concat user-emacs-directory "PowerEmacs"))
 
+;; Core should be load first!
 (require 'core)
-(require 'core_ui)
-(require 'core_ui_modeline)
-(require 'core_editor)
-(require 'core_projects)
-(require 'core_completion)
-(require 'core_games)
 
-(require 'lang)
-(require 'lang_cpp)
-(require 'lang_nasm)
+;; Prog should be load next!
+(require 'prog)
 
-(require 'keybindings)
+;; Now, you can load any prog_* modules.
+(require 'prog_cpp)
 
-;;; init.el ends here
+;; Keybinds module should be load last!
+(require 'keybinds)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -55,10 +46,12 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (hl-line-plus winum which-key use-package switch-window spaceline reverse-im pyenv-mode py-autopep8 on-screen multi-term magit ibuffer-sidebar hlinum highlight-leading-spaces helm-swoop helm-projectile helm-flyspell helm-company helm-ag flycheck-pycheckers dired-sidebar delight company-shell company-dict company-anaconda base16-theme anzu all-the-icons-dired))))
+    ())))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;;; init.el ends here

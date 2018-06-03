@@ -8,6 +8,8 @@
 
 ;;; Code:
 
+(provide 'core_ui_modeline)
+
 (use-package spaceline
   :config
   (setq-default
@@ -95,5 +97,4 @@ Args: FACE, ACTIVE."
   "PowerEmacs highlight face for spaceline."
   :group 'spaceline)
 
-(provide 'core_ui_modeline)
 ;;; core_ui_modeline.el ends here

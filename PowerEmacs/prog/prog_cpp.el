@@ -1,4 +1,4 @@
-;;; package -- lang_cpp
+;;; package -- prog_cpp
 ;;; Commentary:
 
 ;;; PowerEmacs C/C++ support
@@ -12,6 +12,8 @@
 ;; - cmake
 
 ;;; Code:
+
+(provide 'prog_cpp)
 
 (use-package irony
   :config
@@ -30,16 +32,9 @@
 (use-package company-irony-c-headers
   :ensure t)
 
-;(use-package flycheck-irony
-;  :config
-;  (eval-after-load 'flycheck
-;  '(add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
-;  :ensure t)
-
 (use-package cmake-ide
   :config
   (cmake-ide-setup)
   :ensure t)
 
-(provide 'lang_cpp)
-;;; lang_cpp.el ends here
+;;; prog_cpp.el ends here

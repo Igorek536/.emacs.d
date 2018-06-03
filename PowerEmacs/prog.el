@@ -1,7 +1,7 @@
-;;; package -- lang
+;;; package -- prog.el
 ;;; Commentary:
 
-;;; PowerEmacs Lang
+;;; PowerEmacs Prog
 ;;; Author : Igorek536
 ;;; Version: 0.1
 ;;; This module is part of PowerEmacs distribution.
@@ -9,7 +9,9 @@
 
 ;;; Code:
 
-(add-to-list 'load-path (concat user-emacs-directory "PowerEmacs/lang"))
+(provide 'prog)
+
+(add-to-list 'load-path (concat user-emacs-directory "PowerEmacs/prog"))
 
 (use-package flycheck
   :init
@@ -35,7 +37,7 @@
   :ensure t)
 
 (use-package yasnippet-snippets
+  :delight
   :ensure t)
 
-(provide 'lang)
-;;; lang.el ends here
+;;; prog.el ends here

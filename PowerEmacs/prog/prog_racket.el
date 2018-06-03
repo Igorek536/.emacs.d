@@ -1,4 +1,4 @@
-;;; package -- lang_racket
+;;; package -- prog_racket
 ;;; Commentary:
 
 ;;; PowerEmacs Racket support
@@ -7,6 +7,8 @@
 ;;; This module is part of PowerEmacs distribution.
 
 ;;; Code:
+
+(provide 'prog_racket)
 
 ;; WARNING!
 ;; You should install racket and DrRacket before use this module!
@@ -17,5 +19,4 @@
   (add-hook 'racket-repl-mode-hook #'racket-unicode-input-method-enable)
   :ensure t)
 
-(provide 'lang_racket)
-;;; lang_racket.el ends here
+;;; prog_racket.el ends here

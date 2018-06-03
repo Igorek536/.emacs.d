@@ -1,12 +1,14 @@
-;;; package -- keybindings
+;;; package -- keybinds
 ;;; Commentary:
 
-;;; PowerEmacs Keybindings
+;;; PowerEmacs Keybinds
 ;;; Author : Igorek536
 ;;; Version: 0.1
 ;;; This module is part of PowerEmacs distribution.
 
 ;;; Code:
+
+(provide 'keybinds)
 
 ; Standart
 (global-set-key (kbd "C-x C-b") 'ibuffer)
@@ -33,17 +35,5 @@
 
 ; Magit
 (global-set-key (kbd "C-x g") 'magit-status)
-;(global-set-key (kbd "C-x g c") 'magit-commit)
-;(global-set-key (kbd "C-x g p") 'magit-push)
-;(global-set-key (kbd "C-x g e") 'magit-ediff-resolve)
-;(global-set-key (kbd "C-x g r") 'magit-rebase-interactive)
 
-; Switch-Window
-(global-set-key (kbd "C-x o") 'switch-window)
-(global-set-key (kbd "C-x 1") 'switch-window-then-maximize)
-(global-set-key (kbd "C-x 2") 'switch-window-then-split-below)
-(global-set-key (kbd "C-x 3") 'switch-window-then-split-right)
-(global-set-key (kbd "C-x 0") 'switch-window-then-delete)
-
-(provide 'keybindings)
-;;; keybindings.el ends here
+;;; keybinds.el ends here

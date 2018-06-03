@@ -8,6 +8,8 @@
 
 ;;; Code:
 
+(provide 'core_projects)
+
 ;; Little magit tutorial for nubbies
 ; - To create a repo, use 'magit-init'
 ; - To run magit main interface, use 'magit-status' ("C-x g" keybinding)
@@ -17,14 +19,7 @@
 (use-package magit
   :ensure t)
 
-(use-package all-the-icons-dired
-  :hook
-  (dired-mode . all-the-icons-dired-mode)
-  :ensure t
-  :commands (all-the-icons-dired-mode))
-
 (use-package projectile
   :ensure t)
 
-(provide 'core_projects)
 ;;; core_projects.el ends here

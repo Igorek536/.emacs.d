@@ -8,15 +8,15 @@
 
 ;;; Code:
 
-(setq load-prefer-newer t)
+(provide 'core)
 
-(setq gc-cons-threshold most-positive-fixnum)
+(setq load-prefer-newer t
+      gc-cons-threshold most-positive-fixnum)
+
 (add-hook 'emacs-startup-hook 'startup/set-gc-threshold)
 (defun startup/set-gc-threshold ()
   "Reset `gc-cons-threshold' to its default value."
   (setq gc-cons-threshold  9000000))
-
-(setq large-file-warning-threshold 100000000)
 
 ; Defer jit font locking slightly to [try to] improve Emacs performance
 (setq-default jit-lock-defer-time nil
@@ -24,27 +24,14 @@
               jit-lock-stealth-time 0.2
               jit-lock-stealth-verbose nil)
 
-;; use-package bootstrap
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
-(when (not package-archive-contents) (package-refresh-contents))
-(unless (package-installed-p 'use-package) (package-install 'use-package))
-(eval-when-compile (require 'use-package))
-
 (add-to-list 'load-path (concat user-emacs-directory "PowerEmacs/_pkg"))
 (add-to-list 'load-path (concat user-emacs-directory "PowerEmacs/core"))
 
-; Bug hunter
-; To fix emacs init use: bug-hunter-init-file
-(use-package bug-hunter
-  :ensure t)
-
-; Paradox package menu
-(use-package paradox
-  :config
-  (paradox-enable)
-  :ensure t)
-
-;(use-package dired+)
+(require 'core_ui)
+(require 'core_editor)
+(require 'core_projects)
+(require 'core_completion)
+(require 'core_games)
 
 ;; Shell config
 (setq shell-file-name "/bin/bash")
@@ -73,12 +60,19 @@
 (setq-default ring-bell-function #'ignore
               visible-bell nil)
 
+(setq large-file-warning-threshold 100000000)
+
 (defun poweremacs-clean ()
-  "Clean all files."
+  "Clean all garbage."
   (interactive)
-  (delete-directory (concat user-emacs-directory "eshell") t)
-  (delete-directory (concat user-emacs-directory "elpa") t))
+  (if (file-directory-p "eshell") (delete-directory (concat user-emacs-directory "eshell") t) (message "ERR"))
+  (if (file-directory-p "elpa") (delete-directory (concat user-emacs-directory "elpa") t) (message "ERR"))
+)
 
+;; use-package bootstrap
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
+(when (not package-archive-contents) (package-refresh-contents))
+(unless (package-installed-p 'use-package) (package-install 'use-package))
+(eval-when-compile (require 'use-package))
 
-(provide 'core)
 ;;; core.el ends here
