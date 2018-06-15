@@ -1,4 +1,4 @@
-;;; package -- core_projects
+;;; package -- coremodule4-projects
 ;;; Commentary:
 
 ;;; PowerEmacs Projects
@@ -8,7 +8,7 @@
 
 ;;; Code:
 
-(provide 'core_projects)
+(provide 'coremodule4-projects)
 
 ;; Little magit tutorial for nubbies
 ; - To create a repo, use 'magit-init'
@@ -22,4 +22,4 @@
 (use-package projectile
   :ensure t)
 
-;;; core_projects.el ends here
+;;; coremodule4-projects.el ends here

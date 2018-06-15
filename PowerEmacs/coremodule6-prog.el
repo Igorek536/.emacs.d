@@ -1,7 +1,7 @@
-;;; package -- prog.el
+;;; package -- coremodule6-prog.el
 ;;; Commentary:
 
-;;; PowerEmacs Prog
+;;; PowerEmacs Prog module
 ;;; Author : Igorek536
 ;;; Version: 0.1
 ;;; This module is part of PowerEmacs distribution.
@@ -9,9 +9,7 @@
 
 ;;; Code:
 
-(provide 'prog)
-
-(add-to-list 'load-path (concat user-emacs-directory "PowerEmacs/prog"))
+(provide 'coremodule6-prog)
 
 (use-package flycheck
   :init
@@ -21,6 +19,8 @@
 (use-package company
   :init
   (add-hook 'after-init-hook 'global-company-mode)
+  :config
+  (setq company-show-numbers t)
   :delight
   :ensure t)
 
@@ -40,4 +40,4 @@
   :delight
   :ensure t)
 
-;;; prog.el ends here
+;;; coremodule6-prog.el ends here

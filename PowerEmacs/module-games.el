@@ -1,14 +1,16 @@
-;;; package -- core_games
+;;; package -- module-games
 ;;; Commentary:
 
-;;; PowerEmacs Games
+;;; PowerEmacs Games module
 ;;; Author : Igorek536
 ;;; Version: 0.2
 ;;; This module is part of PowerEmacs distribution.
 
 ;;; Code:
 
-(add-to-list 'load-path (concat user-emacs-directory "PowerEmacs/_pkg/emacsgames"))
+(provide 'module-games) 
+
+(add-to-list 'load-path (concat user-emacs-directory "PowerEmacs/games"))
 
 (use-package 5x5)
 (use-package animate)
@@ -38,5 +40,4 @@
 (use-package autotetris-mode
   :ensure t)
 
-(provide 'core_games) 
 ;;; core_games.el ends here

@@ -1,14 +1,14 @@
-;;; package -- prog_python
+;;; package -- module-python
 ;;; Commentary:
 
-;;; PowerEmacs Python support
+;;; PowerEmacs Python module
 ;;; Author : Igorek536
 ;;; Version: 0.1
 ;;; This module is part of PowerEmacs distribution.
 
 ;;; Code:
 
-(provide 'prog_python)
+(provide 'module-python)
 
 ;; WARNING! All required packages should be installed in user mode
 ;; (pip3 install --user [package])
@@ -63,4 +63,4 @@
 (with-eval-after-load 'flycheck
   (add-hook 'flycheck-mode-hook #'flycheck-pycheckers-setup))
 
-;;; prog_python.el ends here
+;;; module-python.el ends here

@@ -1,4 +1,4 @@
-;;; package -- core_ui
+;;; package -- coremodule1-ui
 ;;; Commentary:
 
 ;;; PowerEmacs Ui
@@ -8,14 +8,11 @@
 
 ;;; Code:
 
-(provide 'core_ui)
+(provide 'coremodule1-ui)
 
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 (toggle-frame-maximized)
-
-(require 'core_ui_splash)
-(require 'core_ui_modeline)
 
 ;; WARNING! White/Light themes are strongly NOT RECOMMENDED!
 ;; Themes included:  (i prefer dark themes)
@@ -87,10 +84,11 @@
   (setq dired-sidebar-use-term-integration t)
   (setq dired-sidebar-width 20))
 
-(use-package all-the-icons-dired
-  :hook
-  (dired-mode . all-the-icons-dired-mode)
-  :ensure t
-  :commands (all-the-icons-dired-mode))
+;(use-package all-the-icons-dired
+;  :hook
+;  (dired-mode . all-the-icons-dired-mode)
+;  :ensure t
+;  :delight
+;  :commands (all-the-icons-dired-mode))
 
-;;; core_ui.el ends here
+;;; coremodule1-ui.el ends here

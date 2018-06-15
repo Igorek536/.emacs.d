@@ -1,7 +1,7 @@
-;;; package -- prog_cpp
+;;; package -- module-cpp
 ;;; Commentary:
 
-;;; PowerEmacs C/C++ support
+;;; PowerEmacs C/C++ module
 ;;; Author : Igorek536
 ;;; Version: 0.1
 ;;; This module is part of PowerEmacs distribution.
@@ -13,7 +13,7 @@
 
 ;;; Code:
 
-(provide 'prog_cpp)
+(provide 'module-cpp)
 
 (use-package irony
   :config
@@ -37,4 +37,4 @@
   (cmake-ide-setup)
   :ensure t)
 
-;;; prog_cpp.el ends here
+;;; module-cpp.el ends here

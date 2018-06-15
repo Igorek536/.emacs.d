@@ -1,4 +1,4 @@
-;;; package -- core_editor
+;;; package -- coremodule2-editor
 ;;; Commentary:
 
 ;;; PowerEmacs Editor
@@ -8,7 +8,7 @@
 
 ;;; Code:
 
-(provide 'core_editor)
+(provide 'coremodule2-editor)
 
 ;(use-package highlight-leading-spaces
 ;  :ensure t
@@ -52,8 +52,8 @@
 (delete-selection-mode t)
 
 ;; CUA settings
-(cua-mode t)
-(transient-mark-mode 1)               ; No region when it is not highlighted
+;(cua-mode t)
+;(transient-mark-mode 1)               ; No region when it is not highlighted
 
 ;; Smooth scrolling
 (setq scroll-step 1)
@@ -62,4 +62,4 @@
 (setq mouse-wheel-progressive-speed nil)
 (setq mouse-wheel-follow-mouse t)
 
-;;; core_editor.el ends here
+;;; coremodule2-editor.el ends here

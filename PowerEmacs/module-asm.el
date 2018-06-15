@@ -1,4 +1,4 @@
-;;; package -- prog_asm
+;;; package -- module-asm
 ;;; Commentary:
 
 ;;; PowerEmacs ASM module
@@ -8,7 +8,7 @@
 
 ;;; Code:
 
-(provide 'prog_asm)
+(provide 'module-asm)
 
 (use-package asm-mode
   :config
@@ -17,4 +17,4 @@
                            (setq indent-tabs-mode t)
                            (setq indent-line-function 'insert-tab))))
 
-;;; prog_asm.el ends here
+;;; module-asm.el ends here

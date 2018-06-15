@@ -1,14 +1,14 @@
-;;; package -- core_ui_splash
+;;; package -- module-splash
 ;;; Commentary:
 
-;;; PowerEmacs Splash image
+;;; PowerEmacs Splash module
 ;;; Author : Igorek536
 ;;; Version: 0.1
 ;;; This module is part of PowerEmacs distribution.
 
 ;;; Code:
 
-(provide 'core_ui_splash)
+(provide 'module-splash)
 
 (setq fancy-splash-image (expand-file-name "splash.png" (concat user-emacs-directory "PowerEmacs")))
 
@@ -31,29 +31,6 @@
             ,(lambda (_button)
                (help-with-tutorial)))
      ".\n\n"
-     :face (variable-pitch (:foreground "cyan3"))
-     "PowerEmacs is:     "
-     "("
-     :face (variable-pitch (:foreground "PaleVioletRed"))
-     "PSP principle"
-     :face (variable-pitch (:foreground "cyan3"))
-     ")\n"
-     :face (variable-pitch (:foreground "SpringGreen1"))
-     "\t- "
-     :face (variable-pitch (:foreground "PaleVioletRed"))
-     "P"
-     :face (variable-pitch (:foreground "SpringGreen1"))
-     "reconfigured\n"
-     "\t- "
-     :face (variable-pitch (:foreground "PaleVioletRed"))
-     "S"
-     :face (variable-pitch (:foreground "SpringGreen1"))
-     "imple\n"
-     "\t- "
-     :face (variable-pitch (:foreground "PaleVioletRed"))
-     "P"
-     :face (variable-pitch (:foreground "SpringGreen1"))
-     "owerful\n"
      :face variable-pitch
      "\n\n"))
 )
@@ -150,4 +127,4 @@
   "Custom startup message in minibuffer."
   (message "Let's make Emacs powerfull. Again."))
 
-;;; core_ui_splash.el ends here
+;;; module-splash.el ends here

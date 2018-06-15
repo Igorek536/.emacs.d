@@ -1,14 +1,14 @@
-;;; package -- core
+;;; package -- coremodule0-core
 ;;; Commentary:
 
-;;; PowerEmacs Core
+;;; PowerEmacs Core module
 ;;; Author : Igorek536
 ;;; Version: 0.3
 ;;; This module is part of PowerEmacs distribution.
 
 ;;; Code:
 
-(provide 'core)
+(provide 'coremodule0-core)
 
 (setq load-prefer-newer t
       gc-cons-threshold most-positive-fixnum)
@@ -27,11 +27,11 @@
 (add-to-list 'load-path (concat user-emacs-directory "PowerEmacs/_pkg"))
 (add-to-list 'load-path (concat user-emacs-directory "PowerEmacs/core"))
 
-(require 'core_ui)
-(require 'core_editor)
-(require 'core_projects)
-(require 'core_completion)
-(require 'core_games)
+;(require 'core_ui)
+;(require 'core_editor)
+;(require 'core_projects)
+;(require 'core_completion)
+;(require 'core_games)
 
 ;; Shell config
 (setq shell-file-name "/bin/bash")
@@ -75,4 +75,4 @@
 (unless (package-installed-p 'use-package) (package-install 'use-package))
 (eval-when-compile (require 'use-package))
 
-;;; core.el ends here
+;;; coremodule0-core.el ends here

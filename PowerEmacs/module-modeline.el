@@ -1,4 +1,4 @@
-;;; package -- core_ui_modeline
+;;; package -- module-modeline
 ;;; Commentary:
 
 ;;; PowerEmacs Modeline module
@@ -8,7 +8,7 @@
 
 ;;; Code:
 
-(provide 'core_ui_modeline)
+(provide 'module-modeline)
 
 (use-package spaceline
   :config
@@ -50,7 +50,7 @@ Args: FACE, ACTIVE."
    ((buffer-modified-p) 'poweremacs-highlight-face-modified)
    (t 'poweremacs-highlight-face-default)))
 
-;;; Colors:
+;;; Faces:
 
 (defface poweremacs-inactive1
   '((t (:background "grey11" :inherit mode-line-inactive)))
@@ -97,4 +97,4 @@ Args: FACE, ACTIVE."
   "PowerEmacs highlight face for spaceline."
   :group 'spaceline)
 
-;;; core_ui_modeline.el ends here
+;;; module-modeline.el ends here

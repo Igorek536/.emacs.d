@@ -27,26 +27,32 @@
 
 (add-to-list 'load-path (concat user-emacs-directory "PowerEmacs"))
 
-;; Core should be load first!
-(require 'core)
+(toggle-debug-on-error)
 
-;; Prog should be load next!
-(require 'prog)
+;; Core modules
 
-;; Now, you can load any prog_* modules.
-(require 'prog_cpp)
+(require 'coremodule0-core)
+(require 'coremodule1-ui)
+(require 'coremodule2-editor)
+(require 'coremodule3-ivy)
+(require 'coremodule4-projects)
+(require 'coremodule5-keybinds)
+(require 'coremodule6-prog)
 
-;; Keybinds module should be load last!
-(require 'keybinds)
+;; Other modules
+
+(require 'module-modeline)
+(require 'module-splash)
+(require 'module-games)
+(require 'module-asm)
+(require 'module-cpp)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    ())))
+ '(package-selected-packages nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

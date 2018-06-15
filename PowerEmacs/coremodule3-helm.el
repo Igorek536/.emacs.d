@@ -1,19 +1,45 @@
-;;; package -- keybinds
-;;; Commentary:
+;;; package -- coremodule3-helm
 
-;;; PowerEmacs Keybinds
+;;; Commentary:
+;;; PowerEmacs Helm module
 ;;; Author : Igorek536
 ;;; Version: 0.1
 ;;; This module is part of PowerEmacs distribution.
 
 ;;; Code:
 
-(provide 'keybinds)
+(provide 'coremodule3-helm)
 
-; Standart
-(global-set-key (kbd "C-x C-b") 'ibuffer)
+(use-package async
+  :ensure t)
 
-; Helm
+(use-package helm-ag
+  :ensure t)
+
+(use-package helm
+  :delight
+  :config
+  (require 'helm-config)
+  (setq helm-split-window-inside-p t
+        helm-split-window-default-side 'below
+        helm-input-idle-delay 0.01)
+  (helm-mode 1)
+  :ensure t)
+
+(use-package helm-projectile
+  :ensure t)
+
+(use-package helm-swoop
+  :ensure t)
+
+(use-package helm-company
+  :ensure t)
+
+(use-package helm-flyspell
+  :ensure t)
+
+;;; Keybinds:
+
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-z") 'helm-select-action)
 (global-set-key (kbd "C-:") 'helm-company)
@@ -30,10 +56,4 @@
 (global-set-key (kbd "C-x r b") 'helm-filtered-bookmarks)
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
 
-; Sidebar
-(global-set-key (kbd "C-x C-n") 'dired-sidebar-toggle-sidebar)
-
-; Magit
-(global-set-key (kbd "C-x g") 'magit-status)
-
-;;; keybinds.el ends here
+;;; coremodule3-helm.el ends here
