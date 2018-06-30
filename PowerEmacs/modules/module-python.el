@@ -29,25 +29,20 @@
 ;;
 ;; And reboot session(or computer :D)
 
-(use-package anaconda-mode
-  :ensure t)
+(use-package anaconda-mode)
 
-(use-package company-anaconda
-  :ensure t)
+(use-package company-anaconda)
 
 (use-package flycheck-pycheckers
   :config
-  (setq flycheck-pycheckers-checkers '(pyflakes flake8 pep8))
-  :ensure t)
+  (setq flycheck-pycheckers-checkers '(pyflakes flake8 pep8)))
 
-(use-package py-autopep8
-  :ensure t)
+(use-package py-autopep8)
 
 (use-package virtualenvwrapper
   :config
   (venv-initialize-interactive-shells)
-  (venv-initialize-eshell)
-  :ensure t)
+  (venv-initialize-eshell))
 
 (eval-after-load "company"
   '(add-to-list 'company-backends 'company-anaconda))

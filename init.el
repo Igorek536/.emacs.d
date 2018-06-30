@@ -25,19 +25,17 @@
 
 (package-initialize)
 
-(add-to-list 'load-path (concat user-emacs-directory "PowerEmacs"))
+(add-to-list 'load-path
+             (concat user-emacs-directory "PowerEmacs"))
+
+(add-to-list 'load-path
+             (concat user-emacs-directory "PowerEmacs/modules"))
 
 (toggle-debug-on-error)
 
-;; Core modules
+;; Main module
 
-(require 'coremodule0-core)
-(require 'coremodule1-ui)
-(require 'coremodule2-editor)
-(require 'coremodule3-ivy)
-(require 'coremodule4-projects)
-(require 'coremodule5-keybinds)
-(require 'coremodule6-prog)
+(require 'main)
 
 ;; Other modules
 

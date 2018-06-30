@@ -18,8 +18,7 @@
    powerline-default-separator 'wave
    powerline-text-scale-factor 1.05
    spaceline-window-numbers-unicode t
-   spaceline-flycheck-bullet "✎ %s")
-  :ensure t)
+   spaceline-flycheck-bullet "✎ %s"))
 
 (use-package spaceline-config
   :ensure spaceline
