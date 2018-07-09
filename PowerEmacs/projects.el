@@ -18,6 +18,11 @@
 
 (use-package projectile)
 
+(use-package helm-projectile
+  :config
+  (setq projectile-completion-system 'helm)
+  (helm-projectile-on))
+
 ;;; LSP:
 
 (use-package lsp-mode)

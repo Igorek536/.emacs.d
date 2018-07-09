@@ -44,6 +44,7 @@
 (require 'module-games)
 (require 'module-asm)
 (require 'module-cpp)
+(require 'module-rust)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

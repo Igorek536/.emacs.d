@@ -24,10 +24,12 @@
   (flycheck-mode . flycheck-rust-setup))
 
 (use-package cargo
+  :diminish cargo-minor-mode
   :hook
   (rust-mode . cargo-minor-mode))
 
 (use-package racer
+  :diminish racer-mode
   :config
   :hook
   (rust-mode . racer-mode)

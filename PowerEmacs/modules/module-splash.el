@@ -14,7 +14,9 @@
 
 (setq fancy-startup-text
       `((:face (variable-pitch (:foreground "#7dc7ff"))
-               "\n\n\nWelcome to "
+               "\nLoad in "
+               ,(lambda () (emacs-init-time))
+               "\n\nWelcome to "
                :link ("PowerEmacs"
                       ,(lambda (_button)
                          (browse-url

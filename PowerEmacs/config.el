@@ -46,6 +46,17 @@
 (setq-default ring-bell-function #'ignore
               visible-bell nil)
 
+;;; Diminish:
+
+(use-package diminish
+  :config
+  (diminish 'yas-minor-mode)
+  (diminish 'flycheck-mode)
+  (diminish 'auto-revert-mode)
+  (diminish 'company-mode)
+  (diminish 'anzu-mode)
+  (diminish 'which-key-mode))
+
 ;;; Shell:
 
 (setq shell-file-name "/bin/bash")
@@ -59,6 +70,7 @@
 
 ;; Standart
 (global-set-key (kbd "C-x C-b") 'ibuffer)
+(global-set-key (kbd "C-c w") 'whitespace-mode)
 
 ;; Sidebar
 (global-set-key (kbd "C-x C-n") 'dired-sidebar-toggle-sidebar)
@@ -74,7 +86,6 @@
 (global-set-key (kbd "C-x C-m") 'helm-M-x)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 (global-set-key (kbd "C-x v") 'helm-projectile)
-(global-set-key (kbd "C-x b") 'helm-buffers-list)
 (global-set-key (kbd "C-x f") 'helm-recentf)
 (global-set-key (kbd "C-x c o") 'helm-occur)
 (global-set-key (kbd "C-x c p") 'helm-projectile-ag)
@@ -82,6 +93,8 @@
 (global-set-key (kbd "C-x c s") 'helm-swoop)
 (global-set-key (kbd "C-x r b") 'helm-filtered-bookmarks)
 (global-set-key (kbd "C-s") 'swiper-helm)
+(global-set-key (kbd "M-y") 'helm-show-kill-ring)
+(global-set-key (kbd "C-x b") 'helm-mini)
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
 
 ;;; config.el ends here

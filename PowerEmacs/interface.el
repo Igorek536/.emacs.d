@@ -66,6 +66,11 @@
   :config
   (winum-mode))
 
+(use-package diff-hl
+  :hook (dired-mode . diff-hl-dired-mode)
+  :config
+  (global-diff-hl-mode 1))
+
 ;;; Helpers:
 
 (use-package which-key
@@ -73,6 +78,16 @@
   (setq which-key-paging-prefixes '("C-x"))
   (which-key-setup-side-window-bottom)
   (which-key-mode))
+
+(add-hook 'prog-mode-hook
+          (lambda () (interactive)
+            (setq show-trailing-whitespace 1)))
+
+;;; Windows:
+
+(use-package zygospore
+  :bind (("C-x 1" . zygospore-toggle-delete-other-windows)
+         ("RET" . newline-and-indent)))
 
 ;;; Search:
 
@@ -103,7 +118,11 @@
   (require 'helm-config)
   (setq helm-split-window-inside-p t
         helm-split-window-default-side 'below
-        helm-input-idle-delay 0.01)
+        helm-input-idle-delay 0.01
+        helm-split-window-inside-p t
+        helm-autoresize-max-height 50
+        helm-autoresize-min-height 30)
+  (helm-autoresize-mode 1)
   (helm-mode 1))
 
 (use-package helm-projectile)
