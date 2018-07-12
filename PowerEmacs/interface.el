@@ -20,6 +20,10 @@
 ;;; Line numbers:
 
 (use-package nlinum
+  :hook
+  (prog-mode . nlinum-mode)
+  (org-mode . nlinum-mode)
+  (text-mode . nlinum-mode)
   :config
   (face-spec-set 'nlinum-current-line
                  '((t :inherit linum
@@ -27,8 +31,7 @@
                       :background "white"
                       :foreground "black")))
   (set-face-background 'linum "black")
-  (setq nlinum-highlight-current-line t)
-  (global-nlinum-mode 1))
+  (setq nlinum-highlight-current-line t))
 
 ;;; Sidebar:
 
@@ -37,19 +40,29 @@
   (if (display-graphic-p)
       (setq dired-sidebar-theme 'icons)
     (setq dired-sidebar-theme 'nerd))
-  (setq dired-sidebar-use-term-integration t)
-  (setq dired-sidebar-width 20))
+  (setq dired-sidebar-use-term-integration t
+        dired-sidebar-width 20))
+
+;;; Diminish:
+
+(use-package diminish)
 
 ;;; Hightlighting:
 
 (use-package paren
   :config
-  (setq show-paren-style 'mixed)
-  (setq show-paren-delay 0)
+  (setq show-paren-style 'mixed
+        show-paren-delay 0)
   (set-face-background 'show-paren-match "SeaGreen3")
   (set-face-foreground 'show-paren-match "black")
   (set-face-attribute 'show-paren-match nil :weight 'extra-bold)
   (show-paren-mode t))
+
+(use-package smartparens
+  :hook
+  (prog-mode . smartparens-mode)
+  :config
+  (require 'smartparens-config))
 
 (use-package rainbow-delimiters
   :hook
@@ -67,13 +80,15 @@
   (winum-mode))
 
 (use-package diff-hl
-  :hook (dired-mode . diff-hl-dired-mode)
+  :hook
+  (dired-mode . diff-hl-dired-mode)
   :config
   (global-diff-hl-mode 1))
 
 ;;; Helpers:
 
 (use-package which-key
+  :diminish which-key-mode
   :config
   (setq which-key-paging-prefixes '("C-x"))
   (which-key-setup-side-window-bottom)
@@ -86,20 +101,21 @@
 ;;; Windows:
 
 (use-package zygospore
-  :bind (("C-x 1" . zygospore-toggle-delete-other-windows)
-         ("RET" . newline-and-indent)))
+  :bind
+  ("C-x 1" . zygospore-toggle-delete-other-windows))
 
 ;;; Search:
 
 (use-package anzu
+  :diminish anzu-mode
   :config
   (setq anzu-cons-mode-line-p nil)
   (global-anzu-mode +1))
 
 ;;; Indent:
 
-(setq-default tab-width 4)
-(setq-default tab-always-indent nil)
+(setq-default tab-width 4
+              tab-always-indent nil)
 (progn (setq-default indent-tabs-mode nil))
 
 ;;; Parents:
@@ -113,26 +129,35 @@
 (use-package helm-ag)
 
 (use-package helm
-  :delight
+  :diminish helm-mode
   :config
   (require 'helm-config)
+  (require 'helm-lib)
   (setq helm-split-window-inside-p t
         helm-split-window-default-side 'below
         helm-input-idle-delay 0.01
         helm-split-window-inside-p t
+        helm-move-to-line-cycle-in-source t
         helm-autoresize-max-height 50
         helm-autoresize-min-height 30)
   (helm-autoresize-mode 1)
   (helm-mode 1))
 
-(use-package helm-projectile)
+(use-package helm-descbinds
+  :defer t
+  :bind
+  (("C-h b" . helm-descbinds)
+   ("C-h w" . helm-descbinds)))
+
+(use-package helm-projectile
+  :config
+  (setq projectile-completion-system 'helm)
+  (helm-projectile-on))
 
 (use-package helm-swoop)
 
 (use-package helm-company)
 
 (use-package helm-flyspell)
-
-(use-package swiper-helm)
 
 ;;; interface.el ends here

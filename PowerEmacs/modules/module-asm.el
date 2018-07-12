@@ -12,9 +12,10 @@
 
 (use-package asm-mode
   :config
-  (add-hook 'asm-mode-hook (lambda()
-                           (setq tab-width 4)
-                           (setq indent-tabs-mode t)
-                           (setq indent-line-function 'insert-tab))))
+  (add-hook 'asm-mode-hook
+            (lambda()
+              (setq tab-width 4
+                    indent-tabs-mode t
+                    indent-line-function 'insert-tab))))
 
 ;;; module-asm.el ends here

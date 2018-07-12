@@ -38,9 +38,9 @@
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
 (eval-when-compile (require 'use-package))
-(setq use-package-always-ensure t)
-(setq package-enable-at-startup nil)
-(setq package--init-file-ensured t)
+(setq use-package-always-ensure t
+      package-enable-at-startup nil
+      package--init-file-ensured t)
 
 ;;; Load modules:
 

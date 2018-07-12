@@ -31,7 +31,7 @@
 (add-to-list 'load-path
              (concat user-emacs-directory "PowerEmacs/modules"))
 
-(toggle-debug-on-error)
+;(toggle-debug-on-error)
 
 ;; Main module
 

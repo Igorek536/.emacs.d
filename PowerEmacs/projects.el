@@ -25,7 +25,8 @@
 
 ;;; LSP:
 
-(use-package lsp-mode)
+(use-package lsp-mode
+  :diminish lsp-mode)
 
 (use-package lsp-ui
   :hook
@@ -34,14 +35,16 @@
 ;;; Company:
 
 (use-package company
+  :diminish company-mode
   :hook
-  (after-init . global-company-mode)
+  (prog-mode . company-mode)
   :config
-  (setq company-show-numbers t))
+  (setq company-idle-delay 0
+        company-show-numbers t))
 
-(use-package company-dict)
+;(use-package company-dict)
 
-(use-package company-shell)
+;(use-package company-shell)
 
 (use-package company-lsp
   :config
@@ -50,12 +53,14 @@
 ;;; Flycheck:
 
 (use-package flycheck
-  :init
-  (global-flycheck-mode))
+  :diminish flycheck-mode
+  :hook
+  (prog-mode . flycheck-mode))
 
 ;;; Yasnippet
 
 (use-package yasnippet
+  :diminish yas-minor-mode
   :config
   (yas-global-mode 1))
 
