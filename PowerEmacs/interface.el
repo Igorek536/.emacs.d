@@ -19,19 +19,18 @@
 
 ;;; Line numbers:
 
-(use-package nlinum
+(use-package display-line-numbers
   :hook
-  (prog-mode . nlinum-mode)
-  (org-mode . nlinum-mode)
-  (text-mode . nlinum-mode)
+  (prog-mode . display-line-numbers-mode)
+  (org-mode . display-line-numbers-mode)
+  (text-mode . display-line-numbers-mode)
   :config
-  (face-spec-set 'nlinum-current-line
-                 '((t :inherit linum
+  (face-spec-set 'line-number-current-line
+                 '((t :inherit line-number
                       :weight bold
                       :background "white"
                       :foreground "black")))
-  (set-face-background 'linum "black")
-  (setq nlinum-highlight-current-line t))
+  (set-face-background 'line-number "black"))
 
 ;;; Sidebar:
 

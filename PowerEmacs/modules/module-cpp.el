@@ -25,6 +25,14 @@
   (setq c-default-style "java"
         c-basic-offset 4))
 
+;(use-package cquery
+;  :hook
+;  ;(c++-mode . lsp-cquery-enable)
+;  ;(c-mode . lsp-cquery-enable)
+;  :config
+;  ;(setq cquery-executable "/path/to/cquery/build/release/bin/cquery")
+;  )
+
 (use-package irony
   :hook
   (c++-mode . irony-mode)
@@ -61,29 +69,5 @@
 (use-package cmake-ide
   :config
   (cmake-ide-setup))
-
-;(use-package ggtags)
-
-;(use-package helm-gtags
-;  :config
-;  (setq helm-gtags-ignore-case t)
-;  (setq helm-gtags-auto-update t)
-;  (define-key helm-gtags-mode-map (kbd "M-t") 'helm-gtags-find-tag)
-;  (define-key helm-gtags-mode-map (kbd "M-r") 'helm-gtags-find-rtag)
-;  (define-key helm-gtags-mode-map (kbd "M-s") 'helm-gtags-find-symbol)
-;  (define-key helm-gtags-mode-map (kbd "M-g M-p") 'helm-gtags-parse-file)
-;  (define-key helm-gtags-mode-map (kbd "C-c <") 'helm-gtags-previous-history)
-;  (define-key helm-gtags-mode-map (kbd "C-c >") 'helm-gtags-next-history)
-;  (define-key helm-gtags-mode-map (kbd "M-,") 'helm-gtags-pop-stack)
-;  :hook
-;  (c-mode . helm-gtags-mode)
-;  (c++-mode . helm-gtags-mode)
-;  (asm-mode . helm-gtags-mode))
-
-;(use-package function-args
-;  :config
-;  (fa-config-default)
-;  (set-default 'semantic-case-fold t)
-;  (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode)))
 
 ;;; module-cpp.el ends here
